@@ -19,7 +19,7 @@ blueprint:
   input:
     controller_device:
       name: Z2M Controller Device
-      description: The controller device to use for the automation. Choose a value only if the remote is integrated with Zigbee2MQTT, ZHA, deCONZ.
+      description: The controller device to use for the automation. Choose a value only if the remote is integrated with Zigbee2MQTT.
       default: ''
       selector:
         # source: https://zigbee.blakadder.com/Ikea_E2201.html
@@ -241,13 +241,7 @@ conditions:
       # check that the button event is not empty
       - >-
         {%- set trigger_action -%}
-        {%- if integration_id == "z2m" -%}
         {{ trigger.payload }}
-        {%- elif integration_id == "zha" -%}
-        {{ trigger.event.data.command }}{{"_" if trigger.event.data.args|length > 0}}{{ trigger.event.data.args|join("_") }}
-        {%- elif integration_id == "dcz" -%}
-        {{ trigger.event.data.event }}
-        {%- endif -%}
         {%- endset -%}
         {{ trigger_action not in ["","None","unknown"] }}
 #
