@@ -1,4 +1,4 @@
-# Based on: https://github.com/EPMatt/awesome-ha-blueprints/blob/main/blueprints/controllers/ikea_e2201/ikea_e2201.yaml#L219
+# https://github.com/EPMatt/awesome-ha-blueprints/blob/main/blueprints/controllers/ikea_e2201/ikea_e2201.yaml#L219
 
 # Blueprint Metadata
 blueprint:
@@ -25,14 +25,14 @@ blueprint:
         # source: https://zigbee.blakadder.com/Ikea_E2201.html
         device:
           filter:
-            # source: https://www.zigbee2mqtt.io/devices/E2201.html#ikea-e2201
+            # source: https://www.zigbee2mqtt.io/devices/E2001_E2002.html#ikea-e2001-e2002
             - integration: mqtt
               manufacturer: IKEA
-              model: RODRET wireless dimmer/power switch
-            # For backwards compatibility with z2m 1.x. model_id is added to end of model rather than a seperate attribute in z2m 2.x
+              model: STYRBAR remote control
+            # For backwards compatability with z2m 1.x. model_id is added to end of model rather than a seperate attribute in z2m 2.x
             - integration: mqtt
               manufacturer: IKEA
-              model: RODRET wireless dimmer/power switch (E2201)
+              model: STYRBAR remote control (E2001/E2002)
           multiple: false
     # inputs for custom actions
     action_button_up_short:
